@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:insert="header"></head>
+
+<body>
+	<div th:insert="headerImage"></div>
+
+	<div th:insert="navBarTop"></div>
+	<div th:insert="headerMessage"></div>
+	<div class="row" style="float:inline-end;padding-right:5px;">
+		<div class="col-md-12">
+			<a th:href="@{/incharge_det}" class="btn btn-primary btn-block" style="width:290px;">Click for
+				Additional/Incharge
+				Details
+
+			</a>
+		</div>
+	</div>
+
+	<div class="row justify-content-center align-items-center">
+
+		<form th:object="${rbk}" th:action="@{/rbkSaveprofile}" method="post" class="align-items-center">
+			<div class="card ecropCard">
+
+				<div class="card-title">
+					<h5 style="text-align: center;">Mapping Of Employee With village secretariat</h5>
+				</div>
+
+				<div class="card-body" style="padding: 10px;">
+					<div class="form-group row">
+						<label for="empcode" class="col-sm-4 col-form-label">Select Employee</label>
+						<div class="col-sm-8">
+							<select name="employee" class="form-select form-control" aria-label="Crop Year">
+								<option value="0">---Select Name---</option>
+								<option th:each="emp : ${mandalName}" th:value="${emp.emp_code}"
+									th:text="${emp.emp_name}">
+									Employee Name</option>
+
+							</select>
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="empcode" class="col-sm-4 col-form-label">Select Incharge</label>
+						<div class="col-sm-8">
+							<select name="incharge" class="form-select form-control" aria-label="Select Incharge">
+								<option value="" th:disabled="true" th:selected="true">---Select Incharge---
+								</option>
+								<option value="I">Incharge</option>
+								<option value="R">Regular</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="box" class="col-sm-4 col-form-label">Add Village Secretariat</label>
+						<div class="col-sm-8">
+							<select name="village" class="form-select form-control" aria-label="Select Village">
+								<option value="0">---Select Village---</option>
+								<option th:each="emp : ${villname}" th:value="${emp.vcode}" th:text="${emp.vname}">
+									Village
+									Name</option>
+
+							</select>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<div style="margin: 0 auto; width: 155px; color: #000;">
+								<button type="submit" class="btn btn-primary" id="searchId"
+									title="Search RBK Details">Add</button>
+								<button type="button" class="btn btn-warning" id="resetId"
+									th:onclick="window.location.href='/home'">Back</button>
+							</div>
+						</div>
+					</div>
+					<div>
+						<span th:utext="${msg}"></span>
+					</div>
+				</div>
+			</div>
+		</form>
+
+	</div>
+
+	<div class="container-fluid header-design-login">
+		<div class="row justify-content-center align-items-center" style="height: 10vh;">
+			<div class="webland-container" style="padding-top:15px;" div>
+
+				<div th:include="RegInchDet :: content"></div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,109 @@
+<div th:if="${repCultivatorDtlsList!=null and !repCultivatorDtlsList.isEmpty()}" class="panel-group">
+	<div class="panel panel-primary">
+		<div class="panel-heading" style="text-align: center;background-color: honeydew;padding: 8spx; margin: 0 auto;display: table;">
+			<b>Owner's Data</b>
+		</div>
+		<div class="panel-body">
+
+			<table id="ownerGrid" class="table table-bordered table-striped dataTable">
+				<thead class="color-palette" style="background-color: #9494b8;">
+					<tr>
+						<th><b>Sl.No</b></th>
+						<th><b>రెవెన్యూ గ్రామం</b></th>
+						<th><b>బుకింగ్ నెంబరు</b></th>
+						<th><b>ఖాతా సంఖ్య</b></th>
+						<th><b>&nbsp;సర్వే నెం</b></th>
+						<th><b>&nbsp;నాటిన  తేదీ</b></th>
+						<th><b>విస్తీర్ణం</b></th>
+						<th><b>సాగుదారు రకం</b></th>
+						<th><b>పంట పేరు-రకం</b></th>
+						<th><b>నీటి వసతి</b></th>
+						<th><b>e-Kyc తేదీ</b></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:id="${cultivator.bookingId}" th:each="cultivator:${ownersList}">
+
+						<td style="width:10%;">
+							<span th:text="${cultivator.bookingId}"></span>
+							<input type="hidden" th:value="${cultivator.bookingId}"
+								th:id="'bookingId'+${cultivatorStat.index}">
+							<input type="hidden" th:value="${cultivator.part_key}"
+								th:id="'part_key'+${cultivatorStat.index}">
+
+							<input type="hidden" th:value="${cultivator.cr_vcode}"
+								th:id="'cr_vcode'+${cultivatorStat.index}">
+							<input type="hidden" th:value="${cultivator.cr_year}"
+								th:id="'cr_year'+${cultivatorStat.index}">
+							<input type="hidden" th:value="${cultivator.cr_season}"
+								th:id="'cr_season'+${cultivatorStat.index}">
+							<input type="hidden" th:value="${cultivator.owner_tenant}"
+								th:id="'owner_tenant'+${cultivatorStat.index}">
+							<input type="hidden" th:value="${cultivator.cultivatorType}"
+								th:id="'cultivatorType'+${cultivatorStat.index}">
+							<input type="hidden" th:value="${cultivator.occupantExtent}"
+								th:id="'occupantExtent'+${cultivatorStat.index}">
+
+						</td>
+						<td style="width:10%;">
+							<span th:text="${cultivator.crSno}"></span>
+							<input type="hidden" th:value="${cultivator.crSno}" th:id="'crSno'+${cultivatorStat.index}">
+						</td>
+						<td style="width:10%;">
+							<span th:text="${cultivator.khNo}"></span>
+							<input type="hidden" th:value="${cultivator.khNo}" th:id="'khNo'+${cultivatorStat.index}">
+						</td>
+						<td style="width:13%;">
+							<span th:text="${cultivator.ocName}"></span>
+							<input type="hidden" th:value="${cultivator.ocName}"
+								th:id="'ocName'+${cultivatorStat.index}">
+						</td>
+						<td style="width:15%;">
+							<span th:text="${cultivator.fatherName}"></span>
+							<input type="hidden" th:value="${cultivator.fatherName}"
+								th:id="'fatherName'+${cultivatorStat.index}">
+						</td>
+						<td style="width:10%;">
+							<span th:text="${cultivator.aadharNo}"></span>
+							<input type="hidden" th:value="${cultivator.aadharNo}"
+								th:id="'aadharNo'+${cultivatorStat.index}">
+						</td>
+						<td style="width:10%;">
+							<span th:text="${cultivator.anubhavadarExtent}"></span>
+							<input type="hidden" th:value="${cultivator.anubhavadarExtent}"
+								th:id="'anubhavadarExtent'+${cultivatorStat.index}">
+						</td>
+						<td style="width:10%;">
+							<span th:text="${cultivator.availableExtent}"></span>
+							<input type="hidden" th:value="${cultivator.availableExtent}"
+								th:id="'availableExtent'+${cultivatorStat.index}">
+						</td>
+						<td style="width:12%;">
+							<div class="row">
+								<div class="col-md-12">
+									<div class="form-group" style="margin-bottom: 5px;">
+										<div class="input-group">
+											<div style="margin: 0 auto; color: #000;">
+												<select th:id="'searchParam'+${cultivatorStat.index}"
+													style="width: 120px" class="form-control"
+													th:onchange="onUserTypeChange([[${cultivatorStat.index}]], this.value)">
+													<option value="0" selected>--Select--</option>
+													<option value="1">Owner</option>
+													<option value="2">Cultivator</option>
+													<option value="3">Enjoyer</option>
+												</select>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+<div style="text-align: center;font-weight: bold;color:red;" th:unless="${repCultivatorDtlsList!=null and !repCultivatorDtlsList.isEmpty()}">
+	<span>No Data Available</span>
+</div>
