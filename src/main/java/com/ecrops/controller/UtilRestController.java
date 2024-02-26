@@ -12,11 +12,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ecrops.config.RegularExpressionclassMethod;
+import com.ecrops.entity.CropwiseExtBookedMaoIntf;
 import com.ecrops.entity.SuperCheckRecordsAlloted;
 import com.ecrops.entity.SuperChkReport;
 import com.ecrops.entity.VAADetails;
 import com.ecrops.entity.VillSecListMaoIntf;
 import com.ecrops.model.RequestModel;
+import com.ecrops.partitions.CropwiseExtBookedMaoIntfPartition;
+import com.ecrops.partitions.CropwiseExtVillPartition;
 import com.ecrops.partitions.SuperCheckRecordsAllotedPartition;
 import com.ecrops.partitions.SuperChkReportPartition;
 import com.ecrops.projections.MasterProjections;
@@ -77,7 +80,13 @@ public List<MasterProjections> getCropGoupidd(String grpcode) {
 	System.out.println("=======list==========" + list.size());
 	return list;
 }
-
+//===============getWaterSorce=====================//
+@GetMapping("/getwatersrc")
+public List<MasterProjections> getWatsrc() {
+	List<MasterProjections> list = dropdownsRepo.getWsrcdesc();
+	System.out.println("=======list==========" + list.size());
+	return list;
+}
 
 	@GetMapping("/villseclistt")
 	List<VillSecListMaoIntf> getList(@RequestParam ("dcode")String dcode, @RequestParam ("mcode")String mcode) {
@@ -163,5 +172,48 @@ return null;
 			System.out.println("details===================>" + supkr.size());
 			return supkr;
 		}
+//=======REP_CropwiseExtBookedMaoIntf============================>
+		
+		@Autowired
+		CropwiseExtBookedMaoIntfPartition cropwiseExtBookedMaoIntfPartition;
 
+		@PostMapping("/crpwiseext")
+		List<CropwiseExtBookedMaoIntf> getCrpWiseExt(@RequestBody RequestModel requestModel) {
+			System.out.println("requestModel=>" + requestModel.toString());
+
+			List<CropwiseExtBookedMaoIntf> crpext = cropwiseExtBookedMaoIntfPartition.getCrpExt(
+					requestModel.getDcode(),
+					requestModel.getMcode(),
+					requestModel.getCrop(),
+					requestModel.getCropyear(),
+					requestModel.getCropgrpid()
+					);
+			System.out.println("details===================>" + crpext.size());
+			
+			
+			return crpext;
+		}
+		
+		@Autowired
+		CropwiseExtVillPartition cropwiseExtVillPartition;
+
+		@PostMapping("/crpwiseextvill")
+		List<CropwiseExtBookedMaoIntf> getCrpWiseExtVill(@RequestBody RequestModel requestModel) {
+			System.out.println("requestModel=>" + requestModel.toString());
+
+			List<CropwiseExtBookedMaoIntf> crpext = cropwiseExtVillPartition.getCrpExt1(
+					requestModel.getDcode(),
+					requestModel.getMcode(),
+					requestModel.getCrop(),
+					requestModel.getCropyear(),
+					requestModel.getCropgrpid()
+					);
+			System.out.println("details===================>" + crpext.size());
+			
+			
+			return crpext;
+		}
+		
+		
+		
 }

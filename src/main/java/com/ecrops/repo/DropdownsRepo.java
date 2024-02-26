@@ -33,4 +33,17 @@ public interface DropdownsRepo extends JpaRepository<SuperCheckRecordsAlloted, S
 	
 	@Query(value="select cropid as col1,cropname as col2 from cropnames  where active='A' order by cropname",nativeQuery = true)
 	public List<MasterProjections> getAllCrops();
+	
+	
+	@Query(value="select wsrcid,wsrcdesc from waterresources where active='A'",nativeQuery=true)
+	public List<MasterProjections> getWsrcdesc();
+	
+	@Query(value="select cast(to_char(now(),'dd/mm/yyyy HH24:MI:SS') as character varying) as reporttime",nativeQuery=true)
+	public ReportTimeProj getReportTime();
+	
+	public interface ReportTimeProj{
+		String getReporttime();
+	}
+	
+	
 }

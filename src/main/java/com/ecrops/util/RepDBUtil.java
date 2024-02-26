@@ -29,7 +29,7 @@ public class RepDBUtil implements Serializable {
    //  con = DriverManager.getConnection("jdbc:postgresql://10.252.114.254:5432/ecrop", "postgres", "ecrop@pg$ql");
 //        con = DriverManager.getConnection("jdbc:postgresql://10.160.6.217:5432/ecrop", "ecrop", "ecrop#6.216");
                //con = DriverManager.getConnection("jdbc:postgresql://10.160.6.216:5432/ecrop", "ecrop_read", "ecrop@1234");
-               con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/ecrop_local", "postgres", "2807");
+               con = DriverManager.getConnection("jdbc:postgresql://10.72.5.187:5432/ecrop", "postgres", "postgres");
 
 
         //con = DriverManager.getConnection("jdbc:postgresql://localhost:5433/ecroplocal", "postgres", "root");

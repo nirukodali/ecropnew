@@ -17,6 +17,9 @@ public interface AadhaarUpdationRepo extends JpaRepository<AadhaarUpdation, Inte
 	
 	@Query(value="select vscode,dcode,mcode,wbvname,wbvcode from wbvillage_mst  WHERE mcode =:mcode",nativeQuery = true)
 	List<AadhaarUpdation> getVillageNames(@Param("mcode") int mcode);
+	
+	
+	 
 
 	
 }
