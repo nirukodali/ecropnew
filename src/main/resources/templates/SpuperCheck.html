@@ -88,6 +88,7 @@
 		var inputwbmcode = $("#inputwbmcode").val();
 		var userid = $("#inputuserid").val();
 		var cropyear = $("#cropyear").val();
+		var activeyear = $("#activeyear").val();
 		alert("cropyear=========>" + cropyear);
 
 		var data = {};
@@ -95,6 +96,7 @@
 		data['wbmcode'] = inputwbmcode;
 		data['cropyear'] = cropyear;
 		data['userid'] = userid;
+		data['activeyear'] = activeyear;
 
 		$.ajax({
 			type: "post",
@@ -138,7 +140,7 @@
 	<input type="hidden" id="inputwbmcode" th:value="${#session.getAttribute('wbmcode')}" />
 	<input type="hidden" id="inputuserid" th:value="${#session.getAttribute('userid')}" />
 	<div align="center">
-		<form>
+	 
 			<table id="ObjEntryTable">
 				<tr>
 					<td colspan="3"></td>
@@ -156,7 +158,7 @@
 				<button type="button" id="btnSubmit" class="btn btn-primary" value="Submit"
 					onclick="return getData();">Submit</button>
 			</div>
-		</form>
+		 
 	</div>
 	<div class="container">
 		<form id="unlockreport" name="unlockreport" method="post">

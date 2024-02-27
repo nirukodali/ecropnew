@@ -14,12 +14,19 @@ public class RequestModel {
 	private String  bookingid;
 	private String  year;
 	private String cropgrpid;
+	private String activeyear;
+	private String wsrcid;
+	
+	
 	public RequestModel() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+
+
 	public RequestModel(String dcode, String mcode, String cropyear, String season, String userid, String wbdcode,
-			String wbmcode, String wbvode, String vcode, String crop, String bookingid, String year, String cropgrpid) {
+			String wbmcode, String wbvode, String vcode, String crop, String bookingid, String year, String cropgrpid,
+			String activeyear, String wsrcid) {
 		super();
 		this.dcode = dcode;
 		this.mcode = mcode;
@@ -34,91 +41,170 @@ public class RequestModel {
 		this.bookingid = bookingid;
 		this.year = year;
 		this.cropgrpid = cropgrpid;
+		this.activeyear = activeyear;
+		this.wsrcid = wsrcid;
 	}
+
+
 	public String getDcode() {
 		return dcode;
 	}
+
+
 	public void setDcode(String dcode) {
 		this.dcode = dcode;
 	}
+
+
 	public String getMcode() {
 		return mcode;
 	}
+
+
 	public void setMcode(String mcode) {
 		this.mcode = mcode;
 	}
+
+
 	public String getCropyear() {
 		return cropyear;
 	}
+
+
 	public void setCropyear(String cropyear) {
 		this.cropyear = cropyear;
 	}
+
+
 	public String getSeason() {
 		return season;
 	}
+
+
 	public void setSeason(String season) {
 		this.season = season;
 	}
+
+
 	public String getUserid() {
 		return userid;
 	}
+
+
 	public void setUserid(String userid) {
 		this.userid = userid;
 	}
+
+
 	public String getWbdcode() {
 		return wbdcode;
 	}
+
+
 	public void setWbdcode(String wbdcode) {
 		this.wbdcode = wbdcode;
 	}
+
+
 	public String getWbmcode() {
 		return wbmcode;
 	}
+
+
 	public void setWbmcode(String wbmcode) {
 		this.wbmcode = wbmcode;
 	}
+
+
 	public String getWbvode() {
 		return wbvode;
 	}
+
+
 	public void setWbvode(String wbvode) {
 		this.wbvode = wbvode;
 	}
+
+
 	public String getVcode() {
 		return vcode;
 	}
+
+
 	public void setVcode(String vcode) {
 		this.vcode = vcode;
 	}
+
+
 	public String getCrop() {
 		return crop;
 	}
+
+
 	public void setCrop(String crop) {
 		this.crop = crop;
 	}
+
+
 	public String getBookingid() {
 		return bookingid;
 	}
+
+
 	public void setBookingid(String bookingid) {
 		this.bookingid = bookingid;
 	}
+
+
 	public String getYear() {
 		return year;
 	}
+
+
 	public void setYear(String year) {
 		this.year = year;
 	}
+
+
 	public String getCropgrpid() {
 		return cropgrpid;
 	}
+
+
 	public void setCropgrpid(String cropgrpid) {
 		this.cropgrpid = cropgrpid;
 	}
+
+
+	public String getActiveyear() {
+		return activeyear;
+	}
+
+
+	public void setActiveyear(String activeyear) {
+		this.activeyear = activeyear;
+	}
+
+
+	public String getWsrcid() {
+		return wsrcid;
+	}
+
+
+	public void setWsrcid(String wsrcid) {
+		this.wsrcid = wsrcid;
+	}
+
+
 	@Override
 	public String toString() {
 		return "RequestModel [dcode=" + dcode + ", mcode=" + mcode + ", cropyear=" + cropyear + ", season=" + season
 				+ ", userid=" + userid + ", wbdcode=" + wbdcode + ", wbmcode=" + wbmcode + ", wbvode=" + wbvode
 				+ ", vcode=" + vcode + ", crop=" + crop + ", bookingid=" + bookingid + ", year=" + year + ", cropgrpid="
-				+ cropgrpid + "]";
+				+ cropgrpid + ", activeyear=" + activeyear + ", wsrcid=" + wsrcid + "]";
 	}
+
+
+	
 	
 }

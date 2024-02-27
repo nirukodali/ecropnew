@@ -63,12 +63,6 @@ public class MroRibbonController {
 			@RequestParam("totext") String totext,
 			Model model) {
 		
-		System.out.println("mcode=>"+mcode);
-		System.out.println("cropid=>"+cropid);
-		System.out.println("crpgrpId=>"+crpgrpId);
-		System.out.println("cropyear=>"+cropyear);
-		System.out.println("wbvname=>"+wbvname);
-		System.out.println("totext=>"+totext);
 		
 		ReportTimeProj reportTime = applicationServices.getReportTime();
 		

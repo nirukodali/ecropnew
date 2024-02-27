@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.ecrops.config.RegularExpressionclassMethod;
 import com.ecrops.entity.CropwiseExtBookedMaoIntf;
+import com.ecrops.entity.StateWiseCropIrriAbsIntf;
 import com.ecrops.entity.SuperCheckRecordsAlloted;
 import com.ecrops.entity.SuperChkReport;
 import com.ecrops.entity.VAADetails;
@@ -24,6 +25,7 @@ import com.ecrops.partitions.SuperCheckRecordsAllotedPartition;
 import com.ecrops.partitions.SuperChkReportPartition;
 import com.ecrops.projections.MasterProjections;
 import com.ecrops.repo.DropdownsRepo;
+import com.ecrops.repo.StateWiseCropIrriAbsIntfRepo;
 import com.ecrops.repo.VAADetailsRepo;
 import com.ecrops.repo.VillSecListMaoIntfRepo;
 
@@ -167,8 +169,13 @@ return null;
 		List<SuperChkReport> getSupChk(@RequestBody RequestModel requestModel) {
 			System.out.println("requestModel=>" + requestModel.toString());
 
-			List<SuperChkReport> supkr = superChkReportPartition.getSupchkRep(requestModel.getWbdcode(),
-					requestModel.getWbmcode(), requestModel.getUserid(), requestModel.getCropyear());
+			List<SuperChkReport> supkr = superChkReportPartition.getSupchkRep(
+					requestModel.getWbdcode(),
+					requestModel.getWbmcode(), 
+					requestModel.getUserid(), 
+					requestModel.getCropyear(),
+					requestModel.getActiveyear()
+					);
 			System.out.println("details===================>" + supkr.size());
 			return supkr;
 		}
@@ -214,6 +221,18 @@ return null;
 			return crpext;
 		}
 		
+	//=============================StateWiseCropIrriAbsIntf===============================//
 		
+	@Autowired 
+	StateWiseCropIrriAbsIntfRepo stateWiseCropIrriAbsIntfRepo;
+	@PostMapping("statewisecrop")
+	public String getStateWiseCropWrsc(@RequestBody RequestModel requestModel) {
+		System.out.println("requestModel============>"+requestModel.toString());
+	//List<StateWiseCropIrriAbsIntf> wsrc= stateWiseCropIrriAbsIntfRepo.getWsrcVill(null, null, null, null, null){
+		
+	//}
+		return null;
+	}
+	
 		
 }

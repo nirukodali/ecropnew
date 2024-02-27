@@ -141,6 +141,7 @@
 		var cropYear = $("#cropyear").val();
 		var cropid = $("#cropid").val();
 		var crpgrpId = $("#crpgrpId").val();
+		var activeyear = $("#activeyear").val();
 
 		var data = {};
 		
@@ -210,6 +211,7 @@
 <input type="hidden" id="dcodee" th:value="${#session.getAttribute('dcode')}" />
 <input type="hidden" id="mcodee" name="mcodee" th:value="${#session.getAttribute('mcode')}" />
 <input type="hidden" id="inputuserid" th:value="${#session.getAttribute('userid')}" />
+<input type="hidden" id="activeyear" th:value="${#session.getAttribute('ACTIVEYEAR')}" />
 
 <input type="hidden" id="wbvname" name="wbvname"/>
 <input type="hidden" id="totext" name="totext"/>
