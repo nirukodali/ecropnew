@@ -24,7 +24,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 				"/nonweblandfarmersdata/**","/surveyno/**","/postdata/**", "/repCultivatorDtls/**", "/editCropBookingDtls/**", "/editCropBookingDtls/updateUid/**","/DeviceRegistration/**","/SaveDeviceRegistration/**",
 				"/unsurveyed/**","/UnsurveyedSearch/**","/saveUnsurveyedData/**","/aadhaarSearch/**","/aadhaarupdation/**","/updated/**","./datadownload/**","/saveDatadownload**/",
 				"/getEfishDataEntry/**","/efishFormEntryData/**","/rest/api/efish/**",
-				"/villseclist","/vaadet","/supchkra","/supchk","/crpwiseextent","/crpwiseextent1").permitAll().anyRequest().permitAll())
+				"/villseclist","/vaadet","/supchkra","/supchk","/crpwiseextent","/crpwiseextent1","/statewsrc").permitAll().anyRequest().permitAll())
 	
 		
 		

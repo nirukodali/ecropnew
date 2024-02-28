@@ -102,7 +102,7 @@ public class MainController {
 		httpSession.setAttribute("userid", userRegEntity.getUserid());
 		httpSession.setAttribute("typename", userRegEntity.getUserTypesEntity().getTypeName());
 		httpSession.setAttribute("userType", userRegEntity.getUserTypesEntity().getUserType());
-		
+		System.out.println("userType=========>"+userType);
 		
 		wbMaster = wbMasterService.getWbMasterDetailsForMandal(userRegEntity.getWbMcode(),
 				userRegEntity.getWbDcode());

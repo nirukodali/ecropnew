@@ -91,4 +91,14 @@ public class MroRibbonController {
 
 	}
 	
+	@GetMapping("/statewisecrop")
+	public String getStatewsrc(Model model) {
+		System.out.println("statewsrc");
+		//String village = masterFunctions.masterFunction(cr_vcode, "wbvillage");
+		model.addAttribute("irrigationsList", applicationServices.getWsrcdesc());
+ 
+		return "Rep_StateWiseCropIrriAbsIntf";
+		
+	}
+	
 }

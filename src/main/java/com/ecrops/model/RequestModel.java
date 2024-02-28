@@ -16,6 +16,11 @@ public class RequestModel {
 	private String cropgrpid;
 	private String activeyear;
 	private String wsrcid;
+	private String role;
+	private String seasonActive;
+	private String typename;
+	private String name;
+	private String userType;
 	
 	
 	public RequestModel() {
@@ -26,7 +31,8 @@ public class RequestModel {
 
 	public RequestModel(String dcode, String mcode, String cropyear, String season, String userid, String wbdcode,
 			String wbmcode, String wbvode, String vcode, String crop, String bookingid, String year, String cropgrpid,
-			String activeyear, String wsrcid) {
+			String activeyear, String wsrcid, String role, String seasonActive, String typename, String name,
+			String userType) {
 		super();
 		this.dcode = dcode;
 		this.mcode = mcode;
@@ -43,6 +49,11 @@ public class RequestModel {
 		this.cropgrpid = cropgrpid;
 		this.activeyear = activeyear;
 		this.wsrcid = wsrcid;
+		this.role = role;
+		this.seasonActive = seasonActive;
+		this.typename = typename;
+		this.name = name;
+		this.userType = userType;
 	}
 
 
@@ -196,14 +207,67 @@ public class RequestModel {
 	}
 
 
+	public String getRole() {
+		return role;
+	}
+
+
+	public void setRole(String role) {
+		this.role = role;
+	}
+
+
+	public String getSeasonActive() {
+		return seasonActive;
+	}
+
+
+	public void setSeasonActive(String seasonActive) {
+		this.seasonActive = seasonActive;
+	}
+
+
+	public String getTypename() {
+		return typename;
+	}
+
+
+	public void setTypename(String typename) {
+		this.typename = typename;
+	}
+
+
+	public String getName() {
+		return name;
+	}
+
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+
+	public String getUserType() {
+		return userType;
+	}
+
+
+	public void setUserType(String userType) {
+		this.userType = userType;
+	}
+
+
 	@Override
 	public String toString() {
 		return "RequestModel [dcode=" + dcode + ", mcode=" + mcode + ", cropyear=" + cropyear + ", season=" + season
 				+ ", userid=" + userid + ", wbdcode=" + wbdcode + ", wbmcode=" + wbmcode + ", wbvode=" + wbvode
 				+ ", vcode=" + vcode + ", crop=" + crop + ", bookingid=" + bookingid + ", year=" + year + ", cropgrpid="
-				+ cropgrpid + ", activeyear=" + activeyear + ", wsrcid=" + wsrcid + "]";
+				+ cropgrpid + ", activeyear=" + activeyear + ", wsrcid=" + wsrcid + ", role=" + role + ", seasonActive="
+				+ seasonActive + ", typename=" + typename + ", name=" + name + ", userType=" + userType + "]";
 	}
 
+
+	
 
 	
 	

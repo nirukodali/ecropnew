@@ -35,7 +35,7 @@ public interface DropdownsRepo extends JpaRepository<SuperCheckRecordsAlloted, S
 	public List<MasterProjections> getAllCrops();
 	
 	
-	@Query(value="select wsrcid,wsrcdesc from waterresources where active='A'",nativeQuery=true)
+	@Query(value="select wsrcid as col1,wsrcdesc as col2 from waterresources where active='A'",nativeQuery=true)
 	public List<MasterProjections> getWsrcdesc();
 	
 	@Query(value="select cast(to_char(now(),'dd/mm/yyyy HH24:MI:SS') as character varying) as reporttime",nativeQuery=true)

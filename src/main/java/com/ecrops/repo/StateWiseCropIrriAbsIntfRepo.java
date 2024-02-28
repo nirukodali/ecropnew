@@ -12,7 +12,7 @@ public interface StateWiseCropIrriAbsIntfRepo  extends JpaRepository<StateWiseCr
 	
 	
    //vill//        
-            @Query(value= " select sum(totextent) as totext,cr_vcode from rep_vill_wise_irrgcropwise_ext_v "
+            @Query(value= " select sum(totextent) as totext,cr_vcode from ecrop2023.rep_vill_wise_irrgcropwise_ext_v "
             		+ " where mcode=:mcode  and grpcode=:grpcode   "
                      + "and wsrcid=:wsrcid and cr_year=:cr_year and cr_season=:cr_season "
                      + "group by cr_vcode order by cr_vcode",nativeQuery=true)
@@ -22,7 +22,7 @@ public interface StateWiseCropIrriAbsIntfRepo  extends JpaRepository<StateWiseCr
             		                                   @Param("cr_year") Integer cr_year,
             		                                   @Param("cr_season") String cr_season);
         
-             @Query(value=" select sum(totextent) as totext, cr_vcode from rep_vill_wise_irrgcropwise_ext_v  "
+             @Query(value=" select sum(totextent) as totext, cr_vcode from ecrop2023.rep_vill_wise_irrgcropwise_ext_v  "
              		+ "where mcode=:mcode  and grpcode=:grpcode "
                      + " and cr_crop =:cr_crop and wsrcid=:wsrcid and cr_year=:cr_year and cr_season=:cr_season"
                      + " group by cr_vcode order by cr_vcode",nativeQuery=true)
@@ -34,7 +34,7 @@ public interface StateWiseCropIrriAbsIntfRepo  extends JpaRepository<StateWiseCr
                                                         @Param("cr_season") String cr_season);
  //dist// 
              
-             @Query(value=" select dcode,dname,sum(totextent) as totext from rep_dist_wise_irrigwise_ext_v "
+             @Query(value=" select dcode,dname,sum(totextent) as totext from ecrop2023.rep_dist_wise_irrigwise_ext_v "
              		+ "where dcode=:dcode  and grpcode=:grpcode  and wsrcid=:wsrcid "
                      + "and cr_year=:cr_year and cr_season=:cr_season group by "
                      + "dcode,dname order by dname,mname ",nativeQuery=true) 
@@ -43,7 +43,7 @@ public interface StateWiseCropIrriAbsIntfRepo  extends JpaRepository<StateWiseCr
                                                         @Param("wsrcid") Integer wsrcid,
                                                         @Param("cr_year") Integer cr_year,
                                                         @Param("cr_season") String cr_season);
-             @Query(value= " select dcode,dname,sum(totextent) as totext from rep_dist_wise_irrigwise_ext_v  "
+             @Query(value= " select dcode,dname,sum(totextent) as totext from ecrop2023.rep_dist_wise_irrigwise_ext_v  "
              		+ "where dcode=:dcode and grpcode=:grpcode  and cr_crop=:cr_crop "
                      + "and wsrcid=:wsrcid  and cr_year=:cr_year and cr_season=:cr_season"
                      + " group by dcode,dname",nativeQuery=true)
